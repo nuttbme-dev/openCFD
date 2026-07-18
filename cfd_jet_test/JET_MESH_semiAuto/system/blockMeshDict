@@ -1,0 +1,93 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1;
+
+xmin -0.098;
+xmax  0.098;
+ymin -0.02;
+ymax  0.25;
+zmin -0.004;
+zmax  0.004;
+
+
+lx #calc "$xmax - $xmin";
+dx 0.1;
+xcells #calc "abs($lx/$dx)";
+
+ly #calc "$ymax - $ymin";
+dy 0.1;
+ycells #calc "abs($ly/$dy)";
+
+lz #calc "$zmax - $zmin";
+dz 0.1;
+zcells #calc "abs($lz/$dz)";
+
+vertices        
+(
+    ($xmin  $ymin  $zmin)
+    ($xmax  $ymin  $zmin)
+    ($xmax  $ymax  $zmin)
+    ($xmin  $ymax  $zmin)
+    ($xmin  $ymin  $zmax)
+    ($xmax  $ymin  $zmax)
+    ($xmax  $ymax  $zmax)
+    ($xmin  $ymax  $zmax)
+);
+
+
+blocks          
+(
+    hex (0 1 2 3 4 5 6 7) (60 50 5) simpleGrading (1 1 1)  //was 50 3 50 
+);
+
+edges           
+(
+);
+
+patches         
+(
+    patch minX
+    (
+        (0 4 7 3)
+    )
+    patch maxX
+    (
+        (2 6 5 1)
+    )
+    patch minY
+    (
+        (1 5 4 0)
+    )
+    patch maxY 
+    (
+        (3 7 6 2)
+    )
+    patch minZ
+    (
+        (0 3 2 1)
+    )
+    patch maxZ
+    (
+        (4 5 6 7)
+    )
+);
+
+mergePatchPairs 
+(
+);
+
+// ************************************************************************* //

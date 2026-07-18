@@ -1,0 +1,30 @@
+#!/bin/sh
+cd "${0%/*}" || exit                                # Run from this directory
+. ${WM_PROJECT_DIR:?}/bin/tools/RunFunctions        # Tutorial run functions
+#------------------------------------------------------------------------------
+rm -rf  pro*  dynamicCode &&
+cd constant &&
+rm -rf polyMesh extendedFeatureEdgeMesh &&
+cd triSurface &&
+rm -rf  *.eMesh &&
+cd .. && cd ..
+blockMesh &&
+surfaceFeatureExtract 
+decomposePar &&
+snappyHexMesh -overwrite &&
+mpirun -np 64 snappyHexMesh -overwrite -parallel &&
+#mpirun --use-hwthread-cpus  snappyHexMesh -overwrite -parallel | tee log &&
+reconstructParMesh -constant &&
+checkMesh &&
+touch mesh.foam
+
+#foamToVTK -faceSet nonOrthoFaces
+
+
+
+#splitMeshRegions -cellZones -overwrite &&
+#touch mesh.foam
+#rm -rf constant/domain0 constant/polyMesh
+#rm -rf system/domain0
+#./patch
+#------------------------------------------------------------------------------

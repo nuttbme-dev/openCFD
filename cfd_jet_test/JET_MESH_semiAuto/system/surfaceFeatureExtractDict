@@ -1,0 +1,188 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     |                                                 |
+|   \\  /    A nd           |                                                 |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+
+// Generated automatically from:
+// /home/nuttbme/Documents/nuej_jet/JET_MESH/autoMesh/phase01_scan/generated/geometry.csv
+
+// name: back
+// type: wall
+"back_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: bottom1
+// type: wall
+"bottom1_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: bottom2
+// type: wall
+"bottom2_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: conewall1
+// type: wall
+"conewall1_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: conewall2
+// type: wall
+"conewall2_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: front
+// type: wall
+"front_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: inlet
+// type: patch
+"inlet_patch.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: object
+// type: wall
+"object_wall.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: sideWall1
+// type: patch
+"sideWall1_patch.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: sideWall2
+// type: patch
+"sideWall2_patch.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: top1
+// type: patch
+"top1_patch.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+// name: top2
+// type: patch
+"top2_patch.stl"
+{
+    extractionMethod  extractFromSurface;
+
+    extractFromSurfaceCoeffs
+    {
+        includedAngle 150;
+    }
+
+    writeObj           yes;
+}
+
+
+// ************************************************************************* //

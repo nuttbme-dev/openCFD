@@ -1,0 +1,438 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     |                                                 |
+|   \\  /    A nd           |                                                 |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+
+castellatedMesh true;
+snap            true;
+addLayers       false;
+
+
+// ============================================================
+// Geometry
+// ============================================================
+
+geometry
+{
+    "back_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name back;
+    }
+
+    "bottom1_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name bottom1;
+    }
+
+    "bottom2_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name bottom2;
+    }
+
+    "conewall1_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name conewall1;
+    }
+
+    "conewall2_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name conewall2;
+    }
+
+    "front_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name front;
+    }
+
+    "inlet_patch.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name inlet;
+    }
+
+    "object_wall.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name object;
+    }
+
+    "sideWall1_patch.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name sideWall1;
+    }
+
+    "sideWall2_patch.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name sideWall2;
+    }
+
+    "top1_patch.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name top1;
+    }
+
+    "top2_patch.stl"
+    {
+        type triSurfaceMesh;
+        scale 1.0;
+        name top2;
+    }
+
+}
+
+
+// ============================================================
+// Castellated mesh controls
+// ============================================================
+
+castellatedMeshControls
+{
+    maxLocalCells           1000000;
+    maxGlobalCells          5000000;
+    minRefinementCells      0;
+
+    nCellsBetweenLevels     3;
+
+    features
+    (
+        {
+            file "back_wall.eMesh";
+            level 2;
+        }
+    
+        {
+            file "bottom1_wall.eMesh";
+            level 2;
+        }
+    
+        {
+            file "bottom2_wall.eMesh";
+            level 2;
+        }
+    
+        {
+            file "conewall1_wall.eMesh";
+            level 2;
+        }
+    
+        {
+            file "conewall2_wall.eMesh";
+            level 2;
+        }
+    
+        {
+            file "front_wall.eMesh";
+            level 2;
+        }
+    
+        {
+            file "inlet_patch.eMesh";
+            level 3;
+        }
+    
+        {
+            file "object_wall.eMesh";
+            level 3;
+        }
+    
+        {
+            file "sideWall1_patch.eMesh";
+            level 2;
+        }
+    
+        {
+            file "sideWall2_patch.eMesh";
+            level 2;
+        }
+    
+        {
+            file "top1_patch.eMesh";
+            level 2;
+        }
+    
+        {
+            file "top2_patch.eMesh";
+            level 2;
+        }
+    
+    );
+
+    refinementSurfaces
+    {
+        back
+        {
+            level (1 1);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        bottom1
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        bottom2
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        conewall1
+        {
+            level (2 3);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        conewall2
+        {
+            level (2 3);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        front
+        {
+            level (1 1);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        inlet
+        {
+            level (2 3);
+    
+            patchInfo
+            {
+                type patch;
+            }
+        }
+    
+        object
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type wall;
+            }
+        }
+    
+        sideWall1
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type patch;
+            }
+        }
+    
+        sideWall2
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type patch;
+            }
+        }
+    
+        top1
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type patch;
+            }
+        }
+    
+        top2
+        {
+            level (2 2);
+    
+            patchInfo
+            {
+                type patch;
+            }
+        }
+    
+    }
+
+    refinementRegions
+    {
+       /* object
+        {
+            mode distance;
+    
+            levels
+            (
+                (0.002 2)
+            );
+        }
+    */
+        inlet
+        {
+            mode distance;
+    
+            levels
+            (
+                (0.003 2)
+            );
+        }
+    
+    }
+
+    resolveFeatureAngle     30;
+
+    locationInMesh
+    (
+        0
+        0.1
+        0
+    );
+
+    allowFreeStandingZoneFaces
+                            true;
+}
+
+
+// ============================================================
+// Snap controls
+// ============================================================
+
+snapControls
+{
+    nSmoothPatch            3;
+    tolerance               2.0;
+    nSolveIter              30;
+    nRelaxIter              5;
+
+    nFeatureSnapIter        10;
+
+    implicitFeatureSnap     false;
+    explicitFeatureSnap     true;
+    multiRegionFeatureSnap  false;
+}
+
+
+// ============================================================
+// Layer controls
+// ============================================================
+
+addLayersControls
+{
+    relativeSizes           true;
+
+    layers
+    {
+    }
+
+    expansionRatio          1.2;
+    finalLayerThickness     0.3;
+    minThickness            0.1;
+
+    nGrow                   0;
+    featureAngle            60;
+    nRelaxIter              5;
+
+    nSmoothSurfaceNormals   1;
+    nSmoothNormals          3;
+    nSmoothThickness        10;
+
+    maxFaceThicknessRatio   0.5;
+
+    maxThicknessToMedialRatio
+                            0.3;
+
+    minMedialAxisAngle      90;
+
+    nBufferCellsNoExtrude   0;
+    nLayerIter              50;
+}
+
+
+// ============================================================
+// Mesh quality controls
+// ============================================================
+
+meshQualityControls
+{
+    maxNonOrtho             65;
+    maxBoundarySkewness     20;
+    maxInternalSkewness     4;
+
+    maxConcave              80;
+    minFlatness             0.5;
+
+    minVol                  1e-13;
+    minTetQuality           1e-9;
+    minArea                 -1;
+    minTwist                0.02;
+    minDeterminant          0.001;
+
+    minFaceWeight           0.02;
+    minVolRatio             0.01;
+    minTriangleTwist        -1;
+
+    nSmoothScale            4;
+    errorReduction          0.75;
+}
+
+
+mergeTolerance              1e-6;
+
+
+// ************************************************************************* //

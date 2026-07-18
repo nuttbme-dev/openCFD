@@ -1,0 +1,14 @@
+# ============================================================
+# Active refinement list
+#
+# inside:
+#   + <name> inside <level>
+#
+# distance:
+#   + <name> distance <distance> <level>
+# ============================================================
+
++ object distance 0.003 2
+# + conewall1 inside 3
+# + conewall2 inside 3
++ inlet distance 0.003 2

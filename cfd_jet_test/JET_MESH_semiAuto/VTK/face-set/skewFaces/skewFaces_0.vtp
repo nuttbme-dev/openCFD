@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<!-- skewFaces -->
+<VTKFile type='PolyData' version='0.1' byte_order='LittleEndian' header_type='UInt64'>
+  <PolyData>
+    <Piece NumberOfPoints='24' NumberOfPolys='8'>
+      <Points>
+        <DataArray type='Float32' Name='Points' NumberOfComponents='3' format='binary'>
+IAEAAAAAAAA4XlS7Bp/0PAVCgrr99YO77a30PNmdf7p4jIO7RvDzPMv6groMEVS7lEb0PHwRg7qdUZm77PXyPLWBgrom3567G2T0PIoLgrr99YM77a30PNmdf7o4VlQ7U5r0PJEkgroqD1Q7bEb0PIIRg7p4jIM7RvDzPMv6grqdUZk77PXyPLWBgrpH3p47LGT0PEcJgrqVSFQ7Y5/0PD5ZgTq5/IM7vLj0PEVQfzqzkIM7YfnzPHD4gjqkDVQ7vUf0PEARgzqBVZk7KvzyPE1zgjog3p47eGf0PKwBgjo4XlS7Bp/0PAVCgjoMEVS7lEb0PHwRgzp4jIO7RvDzPMv6gjr99YO77a30PNmdfzqdUZm77PXyPLWBgjom3567G2T0PIoLgjo=
+        </DataArray>
+      </Points>
+      <Polys>
+        <DataArray type='Int32' Name='connectivity' format='binary'>
+AAIAAAAAAAAAAAAAAQAAAAIAAAADAAAABAAAAAUAAAACAAAAAQAAAAYAAAAHAAAACAAAAAkAAAAKAAAABgAAAAkAAAALAAAADAAAAA0AAAAOAAAADwAAABAAAAARAAAADgAAAA0AAAASAAAAEwAAABQAAAAVAAAAFgAAABUAAAAUAAAAFwAAAA==
+        </DataArray>
+        <DataArray type='Int32' Name='offsets' format='binary'>
+IAAAAAAAAAAEAAAACAAAAAwAAAAQAAAAFAAAABgAAAAcAAAAIAAAAA==
+        </DataArray>
+      </Polys>
+      <CellData>
+        <DataArray type='Int32' Name='faceID' format='binary'>
+IAAAAAAAAAByQgEAc0IBAHhCAQB5QgEA4m4BAONuAQDrbgEA7G4BAA==
+        </DataArray>
+      </CellData>
+    </Piece>
+  </PolyData>
+</VTKFile>

@@ -1,0 +1,30 @@
+solid conewall1
+   facet normal 1.000000e+00 0.000000e+00 0.000000e+00
+      outer loop
+         vertex 3.430567e-03 2.400000e-01 1.000000e-03
+         vertex 3.430567e-03 2.350000e-01 1.000000e-03
+         vertex 3.430567e-03 2.400000e-01 -1.000000e-03
+      endloop
+   endfacet
+   facet normal 1.000000e+00 0.000000e+00 0.000000e+00
+      outer loop
+         vertex 3.430567e-03 2.400000e-01 -1.000000e-03
+         vertex 3.430567e-03 2.350000e-01 1.000000e-03
+         vertex 3.430567e-03 2.350000e-01 -1.000000e-03
+      endloop
+   endfacet
+   facet normal 9.935773e-01 1.131553e-01 0.000000e+00
+      outer loop
+         vertex 3.430567e-03 2.350000e-01 1.000000e-03
+         vertex 4.000000e-03 2.300000e-01 1.000000e-03
+         vertex 3.430567e-03 2.350000e-01 -1.000000e-03
+      endloop
+   endfacet
+   facet normal 9.935773e-01 1.131553e-01 0.000000e+00
+      outer loop
+         vertex 3.430567e-03 2.350000e-01 -1.000000e-03
+         vertex 4.000000e-03 2.300000e-01 1.000000e-03
+         vertex 4.000000e-03 2.300000e-01 -1.000000e-03
+      endloop
+   endfacet
+endsolid conewall1
