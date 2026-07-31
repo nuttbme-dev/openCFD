@@ -17,4 +17,9 @@ sudo apt install code
 code
 #########################################################################################################
 ```
-
+## AntiGravity
+```bash
+curl -fsSL https://antigravity.google/cli/install.sh | bash
+agy --version
+agy
+```
