@@ -49,7 +49,7 @@ python -c "import numpy, matplotlib, numba; print('Core Libs: OK')"
 #check PyOpenCL (GPU)
 python -c "import pyopencl as cl; print('GPU Devices:', cl.get_platforms()[0].get_devices())"
 #check MPI
-mpirun -np 4 python -c "from mpi4py import MPI; print(f'Rank {MPI.COMM_WORLD.Get_rank()} OK!')"
+mpirun -np 4 python -c "from mpi4py import MPI; print(f'Rank {MPI.COMM_WORLD.Get_rank()} OK')"
 ```
 
 
