@@ -15,7 +15,7 @@ rm -rf ~/.local/bin/pip*
 # Purge python3-pip delete all  config 
 sudo apt purge -y python3-pip python3-venv
 
-# Clean คราบแพ็กเกจค้างในระบบ
+# Clean 
 sudo apt autoremove -y
 sudo apt clean
 ```
