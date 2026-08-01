@@ -36,6 +36,10 @@ source gpu_env/bin/activate #quit with  deactivate
 #set MPI
 echo "export OMPI_MCA_btl_tcp_if_include=lo" >> ~/.bashrc
 export OMPI_MCA_btl_tcp_if_include=lo
+
+echo "export HYDRA_IFACE=lo" >> ~/.bashrc
+source ~/.bashrc
+
 #install package
 python -m pip install --upgrade pip
 python -m pip install numpy matplotlib pyopencl numba mpi4py
