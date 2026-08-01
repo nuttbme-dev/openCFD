@@ -40,9 +40,8 @@ export OMPI_MCA_btl_tcp_if_include=lo
 python -m pip install --upgrade pip
 python -m pip install numpy matplotlib pyopencl numba mpi4py
 
-````
- # Sanity Check
- ```bash
+# Sanity Check
+
 python --version
 python -m pip list
 #check  NumPy, Matplotlib & Numba
