@@ -45,7 +45,7 @@ python -m pip install numpy matplotlib pyopencl numba mpi4py
 python --version
 python -m pip list
 #check  NumPy, Matplotlib & Numba
-python -c "import numpy, matplotlib, numba; print('Core Libs: OK!')"
+python -c "import numpy, matplotlib, numba; print('Core Libs: OK')"
 #check PyOpenCL (GPU)
 python -c "import pyopencl as cl; print('GPU Devices:', cl.get_platforms()[0].get_devices())"
 #check MPI
