@@ -85,3 +85,41 @@ curl -fsSL https://antigravity.google/cli/install.sh | bash
 agy --version
 agy
 ```
+## git set
+
+```bash
+
+#Generate SSH key
+ssh-keygen -t ed25519 -C "nuttbme-dev@github.com"
+
+#Start SSH agent
+eval "$(ssh-agent -s)"
+
+#Add key to agent
+ssh-add ~/.ssh/id_ed25519
+
+#Copy public key
+cat ~/.ssh/id_ed25519.pub
+# → Add this to GitHub: https://github.com/settings/keys
+
+# Change remote to SSH
+git remote -v
+git remote set-url origin git@github.com:nuttbme-dev/openCFD.git
+git remote -v
+#Test connection
+ssh -T git@github.com
+#Track change
+git add .
+git status
+git commit -m "Update OpenCL benchmark
+
+
+# Push to main branch
+git push origin main
+
+# If first time pushing this branch
+git push -u origin main
+
+```
+
+

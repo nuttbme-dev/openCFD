@@ -1,0 +1,7 @@
+python3 gpu_test.py
+
+mpirun --oversubscribe -np 5 python julia_full_benchmark.py 8000
+
+julia_dynamic_master_worker.py
+
+mpirun --oversubscribe -np 5 python julia_dynamic_master_worker.py 8000
