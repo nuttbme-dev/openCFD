@@ -7,7 +7,7 @@
  
  ## python set up
 ``` bash
-In case need clean installation
+# In case need clean installation
 # Delete Packages  ~/.local (ระดับ User System)
 rm -rf ~/.local/lib/python*
 rm -rf ~/.local/bin/pip*
