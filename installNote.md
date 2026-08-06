@@ -1,7 +1,14 @@
+# Window set
+1) check disk (DOS)
+   diskpart
+   list disk
+   select disk 
+   list partition
+   select partition 3
+    delete partition override
+   
 # Install Ubuntu (Dual boot with Win10)
-1) open PowerShell check disks
-
-  
+1) open PowerShell check disks  
 
 ```powershell
 cd C:
