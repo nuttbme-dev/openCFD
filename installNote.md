@@ -1,3 +1,16 @@
+# Install Ubuntu (Dual boot with Win10)
+1) open PowerShell check disks
+
+  
+
+```powershell
+cd C:
+Get-Partition
+Get-Disk | Get-Partition | Select-Object DiskNumber, DiskId, DriveLetter, Size, Type
+Get-Disk | Where-Object IsSystem -eq $true | Select-Object Number, FriendlyName, PartitionStyle
+```
+
+
 # Ubuntu set
 ```bash
 # clear history
