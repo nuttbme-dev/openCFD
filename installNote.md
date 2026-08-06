@@ -7,6 +7,7 @@
    list partition
    select partition 3
     delete partition override
+exit
 ```
 # Install Ubuntu (Dual boot with Win10)
 1) open PowerShell check disks  
