@@ -9,6 +9,32 @@
     delete partition override
 exit
 ```
+2)  Check location of Win10 boot
+    ```powershell
+    #check location
+    bcdedit /v
+    
+    #relocation
+    bcdedit /set "{bootmgr}" path \EFI\Microsoft\Boot\bootmgfw.efi
+    bcdedit /set "{bootmgr}" description "Windows Boot Manager"
+    bcdboot C:\Windows
+    
+    #recheck
+    ```
+3)  Clear partition
+    ```powershell
+    #check location
+    # x= disk number  y= partition number
+    Get-Partition -DiskNumber x
+    Remove-Partition -DiskNumber x -PartitionNumber y
+    
+    #relocation
+    bcdedit /set "{bootmgr}" path \EFI\Microsoft\Boot\bootmgfw.efi
+    bcdedit /set "{bootmgr}" description "Windows Boot Manager"
+    bcdboot C:\Windows
+    
+    #recheck
+    ```
 # Install Ubuntu (Dual boot with Win10)
 1) open PowerShell check disks  
 
